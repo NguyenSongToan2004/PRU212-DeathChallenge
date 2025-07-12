@@ -2,17 +2,19 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -41,3 +43,32 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3719460489
+    locked: 0
+  - name: BG-moon
+    uniqueID: 1788055537
+    locked: 0
+  - name: BG-tree2
+    uniqueID: 1303966639
+    locked: 0
+  - name: BG-tree
+    uniqueID: 2717219169
+    locked: 0
+  - name: BG-barier
+    uniqueID: 3487575085
+    locked: 0
+  - name: BG-UI
+    uniqueID: 365056775
+    locked: 0
+  - name: Player
+    uniqueID: 3231499169
+    locked: 0
+  - name: Enemy
+    uniqueID: 3184259711
+    locked: 0
+  - name: Target
+    uniqueID: 1530289709
+    locked: 0
+  m_RenderingLayers:
+  - Default
