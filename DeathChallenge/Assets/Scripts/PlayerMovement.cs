@@ -1,10 +1,20 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Tốc độ di chuyển của nhân vật
+    private float _dashTime;
+    bool _isDashing = false;
 
+    public GameObject ghostEffect;
+    public float ghostDelaySeconds;
+
+    private Coroutine dashEffectCoroutine;
+
+    public float moveSpeed = 5f; // Tốc độ di chuyển của nhân vật
+    public float dashBoost;
+    public float dashTime;
     // --- PHẦN THÊM MỚI ---
     public float yLimit = 2.5f; // Giới hạn chiều cao Y mà nhân vật có thể đạt tới
     // ----------------------
@@ -23,10 +33,29 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(PlayerHealth.instance && PlayerHealth.instance.isDead)
+        if (PlayerHealth.instance && PlayerHealth.instance.isDead)
         {
             Debug.Log("Player is dead, stopping movement.");
-            return; 
+            return;
+        }
+
+        if (Keyboard.current.spaceKey.isPressed && _dashTime <= 0 && !_isDashing)
+        {
+            moveSpeed += dashBoost;
+            _dashTime = dashTime;
+            _isDashing = true;
+            StartDashEffect();
+        }
+
+        if (_dashTime <= 0 && _isDashing)
+        {
+            moveSpeed -= dashBoost;
+            _isDashing = false;
+            StopDashEffect();
+        }
+        else
+        {
+            _dashTime -= Time.deltaTime;
         }
 
         // Lấy input từ hệ thống Input System mới
@@ -55,5 +84,37 @@ public class PlayerMovement : MonoBehaviour
 
         animator.SetFloat("Speed", movementInput.sqrMagnitude);
 
+    }
+
+    void StartDashEffect()
+    {
+        if (dashEffectCoroutine != null)
+        {
+            StopCoroutine(dashEffectCoroutine);
+        }
+
+        dashEffectCoroutine = StartCoroutine(DashEffectCoroutine());
+    }
+
+    void StopDashEffect()
+    {
+        if (dashEffectCoroutine != null)
+        {
+            StopCoroutine(dashEffectCoroutine);
+        }
+
+    }
+
+    IEnumerator DashEffectCoroutine()
+    {
+        while (true)
+        {
+            GameObject ghost = Instantiate(ghostEffect, transform.position, transform.rotation);
+            Sprite currenSprite = GetComponent<SpriteRenderer>().sprite;
+            ghost.GetComponent<SpriteRenderer>().sprite = currenSprite;
+
+            Destroy(ghost, 0.5f); 
+            yield return new WaitForSeconds(ghostDelaySeconds);
+        }
     }
 }

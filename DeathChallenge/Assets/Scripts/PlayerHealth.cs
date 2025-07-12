@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth instance; // Biến tĩnh để lưu instance của PlayerHealth
+    public HeathBar heathBar;
     public int maxHealth = 1000;
     public int currentHealth;
     public TextMeshProUGUI healthText;
@@ -11,6 +12,10 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     EnemyAI[] enemies = null;
     public bool isDead = false; // Biến để đánh dấu người chơi đã chết
+
+    public float safeTime = 1f;
+    private float safeTimeCoolDown;
+
 
     private void Awake()
     {
@@ -35,19 +40,46 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("Enemies found: " + enemies.Length);
         }
-        animator = GetComponent<Animator>();
+
         currentHealth = maxHealth;
+        heathBar.UpdateHealthBar(currentHealth, maxHealth);
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>(); // Lấy Rigidbody2D
 
         UpdateHealthText();
     }
 
+    void Update()
+    {
+        // Giảm thời gian an toàn nếu nó lớn hơn 0
+        if (safeTimeCoolDown > 0f)
+        {
+            safeTimeCoolDown -= Time.deltaTime;
+        }
+    }
+
     // Hàm này sẽ được gọi bởi kẻ địch
     public void TakeDamage(int damage)
     {
+
+        if (isDead)
+        {
+            return; 
+        }
+
+        // Kiểm tra thời gian an toàn
+        if (safeTimeCoolDown > 0f)
+        {
+            Debug.Log("Player is in safe time, no damage taken.");
+            return; 
+        }
+
         currentHealth -= damage;
-        Debug.Log("Player's Health: " + currentHealth); // Log ra máu hiện tại
+        //Debug.Log("Player's Health: " + currentHealth); // Log ra máu hiện tại
+
+        heathBar.UpdateHealthBar(currentHealth, maxHealth);
         UpdateHealthText();
+        safeTimeCoolDown = safeTime; // Đặt lại thời gian an toàn
         if (currentHealth <= 0)
         {
             Die();
