@@ -4,14 +4,22 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public static PlayerHealth instance; // Biến tĩnh để lưu instance của PlayerHealth
+
+    [Header("HealthBar Settings")]
     public HeathBar heathBar;
     public int maxHealth = 1000;
     public int currentHealth;
     public TextMeshProUGUI healthText;
+
     private Rigidbody2D rb;
     private Animator animator;
     EnemyAI[] enemies = null;
-    public bool isDead = false; // Biến để đánh dấu người chơi đã chết
+    public bool isDead = false;
+
+
+    [Header("UI Settings")]
+    public GameObject damageTextPrefab;
+    public Canvas gameCanvas;
 
     public float safeTime = 1f;
     private float safeTimeCoolDown;
@@ -70,12 +78,16 @@ public class PlayerHealth : MonoBehaviour
         // Kiểm tra thời gian an toàn
         if (safeTimeCoolDown > 0f)
         {
-            Debug.Log("Player is in safe time, no damage taken.");
+            DamagePopup.Create(transform.position, 0, false, damageTextPrefab, gameCanvas);
             return; 
         }
 
         currentHealth -= damage;
-        //Debug.Log("Player's Health: " + currentHealth); // Log ra máu hiện tại
+
+        if (damageTextPrefab != null && gameCanvas != null)
+        {
+            DamagePopup.Create(transform.position, damage, false, damageTextPrefab, gameCanvas);
+        }
 
         heathBar.UpdateHealthBar(currentHealth, maxHealth);
         UpdateHealthText();

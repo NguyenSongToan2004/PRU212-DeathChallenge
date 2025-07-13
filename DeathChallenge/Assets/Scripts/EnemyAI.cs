@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float moveSpeed = 2f; // Tốc độ di chuyển
 
     [Header("AI Detection")]
-    public float chaseRange = 5f;   
+    public float chaseRange = 5f;
     public float attackRange = 1f;
 
     [Header("Health Settings")]
@@ -44,8 +44,12 @@ public class EnemyAI : MonoBehaviour
     public GameObject bulletPrefab; // Kéo prefab viên đạn vào đây
     public Transform bulletPoint; // Kéo đối tượng FirePoint vào đây
 
-    private bool isWaiting = false; 
-    private Animator animator; 
+    [Header("UI Settings")]
+    public GameObject damageTextPrefab;
+    public Canvas gameCanvas;
+
+    private bool isWaiting = false;
+    private Animator animator;
     private bool isPlayerDead = false;
     private float currentRoamTime;
     private Vector2 roamPosition;
@@ -73,12 +77,6 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
-
-        if (Keyboard.current.kKey.isPressed)
-        {
-            Debug.Log(gameObject.name + " is taking 50 test damage.");
-            TakeDamage(50); // Tự gây 50 sát thương để test
-        }
 
         if (isEnemyDead) return;
 
@@ -233,19 +231,25 @@ public class EnemyAI : MonoBehaviour
         roamPosition = (Vector2)player.position + Random.insideUnitCircle * roamRadius;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, bool isCritical)
     {
         // Nếu đã chết thì không nhận thêm sát thương
         if (isEnemyDead) return;
 
         currentHealth -= damage;
 
-        // Kích hoạt hoạt ảnh bị thương
-        animator.SetTrigger("isHurt");
+        if (damageTextPrefab != null && gameCanvas != null)
+        {
+            DamagePopup.Create(transform.position, damage, isCritical, damageTextPrefab, gameCanvas);
+        }
 
         if (currentHealth <= 0)
         {
             Die();
+        }
+        else
+        {
+            animator.SetTrigger("isHurt");
         }
     }
 
@@ -280,7 +284,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (isRoaming && distanceToPlayer < safeDistance)
         {
-            animator.SetBool("isAttacking", false); 
+            animator.SetBool("isAttacking", false);
             currentState = AIState.Chase;
             return; // Dừng hàm Attack() tại đây
         }
@@ -346,7 +350,7 @@ public class EnemyAI : MonoBehaviour
         // Tạo ra viên đạn tại vị trí và góc quay của FirePoint
         GameObject projectileObj = Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
         Projectile projectileScript = projectileObj.GetComponent<Projectile>();
-       
+
         if (projectileScript != null)
         {
             // Tính toán hướng bắn về phía người chơi
