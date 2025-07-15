@@ -1,0 +1,910 @@
+fileFormatVersion: 2
+guid: 42357b385fdc22c47849637fa69fb69c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4770535989645155198
+    second: LogoFPT_0
+  - first:
+      213: -1452694288066819320
+    second: LogoFPT_1
+  - first:
+      213: -8115369153771095162
+    second: LogoFPT_2
+  - first:
+      213: -8467617218114359319
+    second: LogoFPT_3
+  - first:
+      213: 4784237597692761112
+    second: LogoFPT_4
+  - first:
+      213: -6717023782419666647
+    second: LogoFPT_5
+  - first:
+      213: 1913210633403169487
+    second: LogoFPT_6
+  - first:
+      213: -5933527877465915694
+    second: LogoFPT_7
+  - first:
+      213: 8375489297714369200
+    second: LogoFPT_8
+  - first:
+      213: -6194630948929911563
+    second: LogoFPT_9
+  - first:
+      213: -3025744927798888665
+    second: LogoFPT_10
+  - first:
+      213: -7811765996226624156
+    second: LogoFPT_11
+  - first:
+      213: 3567057351834613113
+    second: LogoFPT_12
+  - first:
+      213: 1841588084523869050
+    second: LogoFPT_13
+  - first:
+      213: 4307872074170921794
+    second: LogoFPT_14
+  - first:
+      213: 6001264449777437203
+    second: LogoFPT_15
+  - first:
+      213: -4194054133205922174
+    second: LogoFPT_16
+  - first:
+      213: -7115234777575798529
+    second: LogoFPT_17
+  - first:
+      213: -2902635580840051446
+    second: LogoFPT_18
+  - first:
+      213: 5048172919013867386
+    second: LogoFPT_19
+  - first:
+      213: -1063535602502468236
+    second: LogoFPT_20
+  - first:
+      213: -699725378626363647
+    second: LogoFPT_21
+  - first:
+      213: 3479708018439048135
+    second: LogoFPT_22
+  - first:
+      213: 6825678544231844098
+    second: LogoFPT_23
+  - first:
+      213: -7843490339902869018
+    second: LogoFPT_24
+  - first:
+      213: 9058433892206775438
+    second: LogoFPT_25
+  - first:
+      213: -160383480037372830
+    second: LogoFPT_26
+  - first:
+      213: 7038260190648940017
+    second: LogoFPT_27
+  - first:
+      213: -51869332374585718
+    second: LogoFPT_28
+  - first:
+      213: -307419050407420683
+    second: LogoFPT_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LogoFPT_0
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 510
+        width: 269
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7b140b0539543240800000000000000
+      internalID: 4770535989645155198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_1
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 437
+        width: 303
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80bc980ed3ef6dbe0800000000000000
+      internalID: -1452694288066819320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_2
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 510
+        width: 270
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bbf4070ca606f80800000000000000
+      internalID: -8115369153771095162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_3
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 583
+        width: 56
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9efef44e00bfc7a80800000000000000
+      internalID: -8467617218114359319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_4
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 583
+        width: 45
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8149b834fb6056240800000000000000
+      internalID: 4784237597692761112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_5
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 582
+        width: 71
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 929660d457658c2a0800000000000000
+      internalID: -6717023782419666647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_6
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 672
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcafe783fe61d8a10800000000000000
+      internalID: 1913210633403169487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_7
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 672
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de34c625dfd7ada0800000000000000
+      internalID: -5933527877465915694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_8
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 583
+        width: 45
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2d95a1427bb3470800000000000000
+      internalID: 8375489297714369200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_9
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 553
+        width: 66
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f44466f8ff380aa0800000000000000
+      internalID: -6194630948929911563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_10
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 583
+        width: 65
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7277b9de4056206d0800000000000000
+      internalID: -3025744927798888665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_11
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 583
+        width: 20
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 465cf660738079390800000000000000
+      internalID: -7811765996226624156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_12
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 583
+        width: 76
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9753c8d23cbb08130800000000000000
+      internalID: 3567057351834613113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_13
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 582
+        width: 69
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7323a01b92ae8910800000000000000
+      internalID: 1841588084523869050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_14
+      rect:
+        serializedVersion: 2
+        x: 1537
+        y: 583
+        width: 42
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24378cec3d2a8cb30800000000000000
+      internalID: 4307872074170921794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_15
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 582
+        width: 56
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31a0a249836c84350800000000000000
+      internalID: 6001264449777437203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_16
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 583
+        width: 19
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28e8085acf9bbc5c0800000000000000
+      internalID: -4194054133205922174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_17
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 553
+        width: 76
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8c61dfaab914d90800000000000000
+      internalID: -7115234777575798529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_18
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 511
+        width: 59
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0d7e9b6154c7b7d0800000000000000
+      internalID: -2902635580840051446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 69
+        width: 230
+        height: 217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7f71920686be0640800000000000000
+      internalID: 5048172919013867386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_20
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 69
+        width: 229
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47dfbde11009d31f0800000000000000
+      internalID: -1063535602502468236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_21
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 69
+        width: 104
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10f56a6b9731a46f0800000000000000
+      internalID: -699725378626363647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_22
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 69
+        width: 221
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb4329a1086a4030800000000000000
+      internalID: 3479708018439048135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_23
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 64
+        width: 219
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 209c1f3d87ea9be50800000000000000
+      internalID: 6825678544231844098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_24
+      rect:
+        serializedVersion: 2
+        x: 1104
+        y: 64
+        width: 229
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e1b1eaa713562390800000000000000
+      internalID: -7843490339902869018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_25
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 69
+        width: 193
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c085e91a506bd70800000000000000
+      internalID: 9058433892206775438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_26
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 69
+        width: 186
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c088c131436cdf0800000000000000
+      internalID: -160383480037372830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_27
+      rect:
+        serializedVersion: 2
+        x: 1813
+        y: 69
+        width: 184
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f537646a5ceca160800000000000000
+      internalID: 7038260190648940017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_28
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 9
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8e7315fd19b74ff0800000000000000
+      internalID: -51869332374585718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LogoFPT_29
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 9
+        width: 41
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc174f9004dbbbf0800000000000000
+      internalID: -307419050407420683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      LogoFPT_0: 4770535989645155198
+      LogoFPT_1: -1452694288066819320
+      LogoFPT_10: -3025744927798888665
+      LogoFPT_11: -7811765996226624156
+      LogoFPT_12: 3567057351834613113
+      LogoFPT_13: 1841588084523869050
+      LogoFPT_14: 4307872074170921794
+      LogoFPT_15: 6001264449777437203
+      LogoFPT_16: -4194054133205922174
+      LogoFPT_17: -7115234777575798529
+      LogoFPT_18: -2902635580840051446
+      LogoFPT_19: 5048172919013867386
+      LogoFPT_2: -8115369153771095162
+      LogoFPT_20: -1063535602502468236
+      LogoFPT_21: -699725378626363647
+      LogoFPT_22: 3479708018439048135
+      LogoFPT_23: 6825678544231844098
+      LogoFPT_24: -7843490339902869018
+      LogoFPT_25: 9058433892206775438
+      LogoFPT_26: -160383480037372830
+      LogoFPT_27: 7038260190648940017
+      LogoFPT_28: -51869332374585718
+      LogoFPT_29: -307419050407420683
+      LogoFPT_3: -8467617218114359319
+      LogoFPT_4: 4784237597692761112
+      LogoFPT_5: -6717023782419666647
+      LogoFPT_6: 1913210633403169487
+      LogoFPT_7: -5933527877465915694
+      LogoFPT_8: 8375489297714369200
+      LogoFPT_9: -6194630948929911563
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
