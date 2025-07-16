@@ -932,6 +932,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningPanel: {fileID: 2103697062}
+  playerHealth: {fileID: 0}
+  delayBeforeNextScene: 2
+  nextSceneName: 
+  resetHealthValue: 1000
 --- !u!4 &207259795
 Transform:
   m_ObjectHideFlags: 0
@@ -3612,13 +3616,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heathBar: {fileID: 1607559806}
+  healthBar: {fileID: 0}
   maxHealth: 1000
   currentHealth: 1000
   healthText: {fileID: 585101158}
-  isDead: 0
+  safeTime: 0
   damageTextPrefab: {fileID: 114907733321588739, guid: 69d5f244c48c1f544a4f8052830df499, type: 3}
   gameCanvas: {fileID: 2009588456}
-  safeTime: 0
+  isDead: 0
 --- !u!114 &1439334944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3950,6 +3955,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fillBar: {fileID: 1253053165}
   valueText: {fileID: 585101158}
+  useSmoothing: 1
+  smoothSpeed: 2
+  useColorChange: 1
+  highHealthColor: {r: 0, g: 1, b: 0, a: 1}
+  mediumHealthColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  lowHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  mediumHealthThreshold: 0.6
+  lowHealthThreshold: 0.3
 --- !u!1 &1674347200
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,13 +4094,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heathBar: {fileID: 0}
+  healthBar: {fileID: 0}
   maxHealth: 1000
   currentHealth: 1000
   healthText: {fileID: 0}
-  isDead: 0
+  safeTime: 0
   damageTextPrefab: {fileID: 0}
   gameCanvas: {fileID: 0}
-  safeTime: 0
+  isDead: 0
 --- !u!114 &1674347205
 MonoBehaviour:
   m_ObjectHideFlags: 0
