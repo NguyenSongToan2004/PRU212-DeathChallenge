@@ -7102,7 +7102,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Background_1
-    clip: {fileID: 8300000, guid: 21d8c4e202a2aff43a1ed8b8e7556424, type: 3}
+    clip: {fileID: 8300000, guid: 5936f35634024d64ca9a93664e5ee5a9, type: 3}
     mixer: {fileID: 0}
     volume: 0.5
     pitch: 1
@@ -7122,8 +7122,8 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: b593aa18d7042ca439317082be6e8322, type: 3}
     mixer: {fileID: 0}
     volume: 0
     pitch: 0
