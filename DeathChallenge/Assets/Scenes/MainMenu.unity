@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 54536373}
   - component: {fileID: 54536375}
   - component: {fileID: 54536374}
+  - component: {fileID: 54536376}
   m_Layer: 5
   m_Name: PlayerPreview (1)
   m_TagString: Untagged
@@ -299,6 +300,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54536372}
   m_CullTransparentMesh: 1
+--- !u!114 &54536376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54536372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1a889bcbfd35040bc17a374f197177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerKey: Guard_1
 --- !u!1 &107867420
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +672,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Map1
+          m_StringArgument: Scene_1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &130397514
@@ -1043,6 +1057,7 @@ GameObject:
   - component: {fileID: 207460220}
   - component: {fileID: 207460222}
   - component: {fileID: 207460221}
+  - component: {fileID: 207460223}
   m_Layer: 5
   m_Name: PlayerPreview (2)
   m_TagString: Untagged
@@ -1107,6 +1122,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207460219}
   m_CullTransparentMesh: 1
+--- !u!114 &207460223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207460219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1a889bcbfd35040bc17a374f197177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerKey: Guard_2
 --- !u!1 &291560151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 493805969}
   - component: {fileID: 493805968}
+  - component: {fileID: 493805970}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -1876,7 +1905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1522be403858def4fb1ccc043be22056, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedPlayerPreview: {fileID: 54536372}
   playerPreviews:
   - {fileID: 54536372}
   - {fileID: 207460219}
@@ -1896,6 +1924,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &493805970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493805967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0967060d377eb1c4aa2af2a73efbb1f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedCharacterIndex: 0
 --- !u!1 &524249425
 GameObject:
   m_ObjectHideFlags: 0
@@ -2257,7 +2298,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Map4
+          m_StringArgument: Scene_4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &686235855
@@ -2984,7 +3025,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Map2
+          m_StringArgument: Scene_2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1042801109
@@ -3894,7 +3935,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Map3
+          m_StringArgument: Scene_3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1212758702
@@ -4802,6 +4843,7 @@ GameObject:
   - component: {fileID: 1395615279}
   - component: {fileID: 1395615278}
   - component: {fileID: 1395615277}
+  - component: {fileID: 1395615280}
   m_Layer: 5
   m_Name: PlayerPreview (3)
   m_TagString: Untagged
@@ -4866,6 +4908,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 27}
   m_SizeDelta: {x: 179.49, y: 227.1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1395615280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395615276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b1a889bcbfd35040bc17a374f197177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerKey: Guard_3
 --- !u!1 &1450169656
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,7 +5163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 441.55, y: 0.0000057605916}
+  m_AnchoredPosition: {x: 441.55, y: 0}
   m_SizeDelta: {x: 883.1, y: 48.323345}
   m_Pivot: {x: 0.5, y: 1.0000001}
 --- !u!114 &1460096180
@@ -7102,7 +7157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0.0000024673527, y: -248.77501}
+  m_AnchoredPosition: {x: 0, y: -248.77501}
   m_SizeDelta: {x: 883.1, y: 400.90332}
   m_Pivot: {x: 0.0000000027939677, y: 0.5}
 --- !u!114 &2101522898

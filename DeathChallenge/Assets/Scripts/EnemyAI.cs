@@ -8,7 +8,7 @@ public class EnemyAI : MonoBehaviour
 
     // === CÁC BIẾN CÓ THỂ TINH CHỈNH TRONG UNITY ===
     [Header("Player & Patrol")]
-    public Transform player; // Kéo GameObject của người chơi vào đây
+    public Transform[] player; // Kéo GameObject của người chơi vào đây
     public Transform[] patrolPoints; // Mảng chứa các điểm tuần tra (Point A, Point B)
     public float moveSpeed = 2f; // Tốc độ di chuyển
 
@@ -57,6 +57,7 @@ public class EnemyAI : MonoBehaviour
     public float minYPosition = -10f; // Giới hạn Y để tránh quái vật bay xuống quá thấp
 
     private int currentHealth;
+    private Transform currentTarget;
     private bool isEnemyDead = false;
 
 
@@ -71,8 +72,32 @@ public class EnemyAI : MonoBehaviour
         // Tự động tìm người chơi nếu chưa được gán
         if (player == null)
         {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            currentTarget = GameObject.FindGameObjectWithTag("Player").transform;
         }
+    }
+
+    void FindClosestPlayer()
+    {
+        Transform closestPlayer = null;
+        float minDistance = float.PositiveInfinity;
+
+        // Duyệt qua tất cả các mục tiêu tiềm năng
+        foreach (Transform p in player)
+        {
+            // Bỏ qua nếu mục tiêu không tồn tại hoặc không hoạt động
+            if (p != null && p.gameObject.activeInHierarchy)
+            {
+                float dist = Vector2.Distance(transform.position, p.position);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    closestPlayer = p;
+                }
+            }
+        }
+
+        // Gán mục tiêu gần nhất cho biến currentTarget
+        currentTarget = closestPlayer;
     }
 
     void Update()
@@ -80,15 +105,24 @@ public class EnemyAI : MonoBehaviour
 
         if (isEnemyDead) return;
 
+        FindClosestPlayer();
+
         if (isPlayerDead)
         {
             Patrol();
             return; // Thoát khỏi hàm Update ngay lập tức
         }
 
+        if (currentTarget == null)
+        {
+            currentState = AIState.Patrol;
+            Patrol();
+            return;
+        }
+
 
         // Tính khoảng cách tới người chơi mỗi frame
-        distanceToPlayer = Vector2.Distance(transform.position, player.position);
+        distanceToPlayer = Vector2.Distance(transform.position, currentTarget.position);
 
         // Bộ não của AI - Quyết định hành động dựa trên trạng thái hiện tại
         switch (currentState)
@@ -196,7 +230,7 @@ public class EnemyAI : MonoBehaviour
             if (distanceToPlayer < safeDistance)
             {
                 // Tìm hướng bay ra xa khỏi người chơi
-                Vector2 directionAwayFromPlayer = (transform.position - player.position).normalized;
+                Vector2 directionAwayFromPlayer = (transform.position - currentTarget.position).normalized;
 
                 // Di chuyển theo hướng đó
                 transform.position += (Vector3)directionAwayFromPlayer * moveSpeed * Time.deltaTime;
@@ -218,7 +252,7 @@ public class EnemyAI : MonoBehaviour
         else
         {
             // Di chuyển thẳng về phía người chơi
-            transform.position = Vector2.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, moveSpeed * Time.deltaTime);
         }
     }
 
@@ -228,7 +262,7 @@ public class EnemyAI : MonoBehaviour
         currentRoamTime = roamTimer;
 
         // Tìm một điểm ngẫu nhiên trong vòng tròn quanh người chơi
-        roamPosition = (Vector2)player.position + Random.insideUnitCircle * roamRadius;
+        roamPosition = (Vector2)currentTarget.position + Random.insideUnitCircle * roamRadius;
     }
 
     public void TakeDamage(int damage, bool isCritical)
@@ -360,7 +394,7 @@ public class EnemyAI : MonoBehaviour
         if (projectileScript != null)
         {
             // Tính toán hướng bắn về phía người chơi
-            Vector3 direction = (player.transform.position - bulletPoint.transform.position).normalized;
+            Vector3 direction = (currentTarget.transform.position - bulletPoint.transform.position).normalized;
             // Gọi hàm Fire để viên đạn bay
             projectileScript.Fire(direction);
         }
