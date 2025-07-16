@@ -63,16 +63,19 @@ public class WinningController : MonoBehaviour
     // Gọi hàm này khi người chơi chiến thắng để hiển thị màn hình
     public void ShowWinningScreen()
     {
+        // Dừng nhạc nền hiện tại
+        AudioManager.instance.StopBackground("Background_1");
+        
+        // Phát âm thanh chiến thắng
+        AudioManager.instance.Play("Victory");
+        
         // Hiển thị winning panel
         if (winningPanel != null)
         {
             winningPanel.SetActive(true);
         }
 
-        // Reset health về giá trị đã định
         ResetPlayerHealth();
-
-        // Bắt đầu coroutine để chuyển scene sau delay
         StartCoroutine(LoadNextSceneAfterDelay());
     }
 
