@@ -19,10 +19,6 @@ public class EndGameManager : MonoBehaviour
     public Button playAgainButton;
     public Button mainMenuButton;
     public Button settingsButton;
-    public ParticleSystem hellParticles;
-    public ParticleSystem overlayParticles;
-    public ScrollRect leaderboardScrollView;
-    public Transform leaderboardContent;
 
     [Header("Game Data")]
     public float gameTime;
@@ -55,12 +51,10 @@ public class EndGameManager : MonoBehaviour
         if (isWin)
         {
             winMessage.text = "Your spirit has found its way to heaven.";
-            overlayParticles.Play();
         }
         else
         {
             loseMessage.text = "YOUR SOUL IS DAMNED TO HELL...";
-            hellParticles.Play();
         }
     }
 
@@ -119,7 +113,7 @@ public class EndGameManager : MonoBehaviour
 
     private void CreateLeaderboardEntry(LeaderboardEntry entry, int rank)
     {
-        GameObject entryObject = Instantiate(leaderboardEntryPrefab, leaderboardContent);
+        GameObject entryObject = Instantiate(leaderboardEntryPrefab);
         LeaderboardEntryUI entryUI = entryObject.GetComponent<LeaderboardEntryUI>();
         entryUI.Setup(rank, entry);
     }
