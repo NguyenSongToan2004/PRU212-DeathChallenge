@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Loading : MonoBehaviour
 {
     public static Loading Instance { get; private set; }
+    public static string TargetSceneName { get; set; } = ""; // Static để lưu trữ giữa các scene
 
     [Header("UI References")]
     [SerializeField] private GameObject loadingPanel;
@@ -21,16 +22,9 @@ public class Loading : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
+
 
     private void Start()
     {
@@ -38,17 +32,19 @@ public class Loading : MonoBehaviour
         if (loadingPanel != null)
             loadingPanel.SetActive(true);
 
-        // Chạy fade-in trước, sau đó mới load scene
-        StartCoroutine(StartLoadingSequence());
-    }
+        // Nếu có target scene thì load nó, ngược lại load MainMenu
+        string sceneToLoad = !string.IsNullOrEmpty(TargetSceneName) ? TargetSceneName : "MainMenu";
 
-    private IEnumerator StartLoadingSequence()
+        // Chạy fade-in trước, sau đó mới load scene
+        StartCoroutine(StartLoadingSequence(sceneToLoad));
+    }
+    private IEnumerator StartLoadingSequence(string sceneToLoad)
     {
         // Bước 1: Fade in loading panel
         yield return StartCoroutine(FadeInLoadingPanel());
 
         // Bước 2: Load scene sau khi fade in hoàn tất
-        yield return StartCoroutine(LoadSceneCoroutine("MainMenu"));
+        yield return StartCoroutine(LoadSceneCoroutine(sceneToLoad));
     }
 
     private IEnumerator FadeInLoadingPanel()
@@ -83,11 +79,51 @@ public class Loading : MonoBehaviour
     }
 
     /// <summary>
+    /// Đặt scene đích sẽ được load sau khi hiển thị loading screen
+    /// </summary>
+    public void SetTargetScene(string sceneName)
+    {
+        TargetSceneName = sceneName;
+    }
+
+    /// <summary>
     /// Gọi load scene kèm hiệu ứng loading.
     /// </summary>
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneWithFade(sceneName));
+        // Nếu sceneName là "LoadingScene" thì chỉ cần chuyển scene
+        if (sceneName == "LoadingScene")
+        {
+            SceneManager.LoadScene("LoadingScene");
+            return;
+        }
+
+        // Ngược lại, set target scene và chuyển sang LoadingScene
+        SetTargetScene(sceneName);
+        SceneManager.LoadScene("LoadingScene");
+    }
+
+    private void ValidateReferences()
+    {
+        if (loadingPanel == null)
+        {
+            loadingPanel = GameObject.Find("LoadingPanel");
+            if (loadingPanel == null)
+            {
+                Debug.LogWarning("LoadingPanel not found! This is normal if not in LoadingScene.");
+                return;
+            }
+        }
+
+        if (loadingScreen == null)
+        {
+            loadingScreen = loadingPanel.GetComponentInChildren<Image>();
+        }
+
+        if (loadingText == null)
+        {
+            loadingText = loadingPanel.GetComponentInChildren<TextMeshProUGUI>();
+        }
     }
 
     /// <summary>
@@ -95,14 +131,10 @@ public class Loading : MonoBehaviour
     /// </summary>
     private IEnumerator LoadSceneWithFade(string sceneName)
     {
-        // Nếu panel chưa hiển thị, fade in trước
         if (loadingPanel != null && !loadingPanel.activeInHierarchy)
         {
-            loadingPanel.SetActive(true);
             yield return StartCoroutine(FadeInLoadingPanel());
         }
-
-        // Sau đó load scene
         yield return StartCoroutine(LoadSceneCoroutine(sceneName));
     }
 
