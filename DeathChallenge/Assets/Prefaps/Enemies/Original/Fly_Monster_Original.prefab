@@ -104,10 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8daa01332958f1f4eb940560107293a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player:
-  - {fileID: 6063224947806085859, guid: 101a19b358b14894084e7a7ba5d4ce21, type: 3}
-  - {fileID: 7604836499216059376, guid: f71197e3855b5cb458fc8159ffa7ce6a, type: 3}
-  - {fileID: 6376400781769869907, guid: ed380da5cc5523d47a6970711ce45856, type: 3}
+  playerPrefab: []
   patrolPoints:
   - {fileID: 0}
   - {fileID: 0}
