@@ -9,6 +9,8 @@ public class EndGameManager : MonoBehaviour
     [Header("UI References")]
     public GameObject winEndGamePanel;
     public GameObject loseEndGamePanel;
+
+    [Header("Win Panel Elements")]
     public TextMeshProUGUI winMessage;
     public TextMeshProUGUI loseMessage;
     public TextMeshProUGUI playerNameText;

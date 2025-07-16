@@ -39,7 +39,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        enemies = FindObjectsOfType<EnemyAI>();
+        enemies = FindObjectsByType<EnemyAI>(FindObjectsSortMode.None);
         if (enemies == null || enemies.Length == 0)
         {
             Debug.LogWarning("No enemies found in the scene.");
