@@ -141,10 +141,7 @@ public class EnemyAI : MonoBehaviour
         currentHealth = maxHealth;
 
 
-
-        GameData.instance.selectedCharacterIndex = 0;
-
-        switch (GameData.instance.selectedCharacterIndex)
+        switch (GameData.selectedCharacterIndex)
 
         {
 

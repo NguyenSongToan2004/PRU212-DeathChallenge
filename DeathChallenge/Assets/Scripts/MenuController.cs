@@ -134,7 +134,7 @@ public class MenuController : MonoBehaviour
 {
     // Chỉ cần mảng chứa các đối tượng xem trước
     [SerializeField] private GameObject[] playerPreviews;
-    private int currentIndex = 0;
+    private int currentIndex = 0; 
 
     void Start()
     {
@@ -180,11 +180,11 @@ public class MenuController : MonoBehaviour
 
     private void UpdateSelectedCharacter()
     {
-        if (GameData.instance != null)
+        if (GameData.selectedCharacterIndex != null)
         {
-            GameData.instance.selectedCharacterIndex = currentIndex;
+            GameData.selectedCharacterIndex = currentIndex;
             // Dùng Debug.Log thay vì Console.WriteLine
-            Debug.Log("Updated selected character index to: " + GameData.instance.selectedCharacterIndex);
+            Debug.Log("Updated selected character index to: " + GameData.selectedCharacterIndex);
         }
         else
         {
@@ -200,6 +200,9 @@ public class MenuController : MonoBehaviour
         }
         else
         {
+
+            GameData.playTime = 10f;
+            GameData.selectedCharacterIndex = 2;
             // Logic chuyển scene của bạn đã đúng
             Loading.TargetSceneName = sceneName;
             SceneManager.LoadScene("LoadingScene");

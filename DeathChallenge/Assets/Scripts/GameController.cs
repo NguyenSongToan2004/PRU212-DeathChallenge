@@ -1,44 +1,31 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject[] playerPrefabs; // Danh sách prefab thực tế người chơi
+    public TextMeshProUGUI playTimeText; // Tham chiếu đến TextMeshProUGUI để hiển thị thời gian chơi
 
-    void Start()
+    private void Awake()
     {
+        // Kiểm tra và khởi tạo GameStats nếu chưa có
+        if (GameData.playTime == 0f)
+        {
+            GameData.playTime = 0f;
+        }
+    }
 
-        //int selected = GameData.selectedCharacterIndex;
-
-        //// Lấy script Image từ preview đã chọn
-        //KeyPlayer imageComponent = selected.GetComponent<KeyPlayer>();
-        //if (imageComponent == null)
-        //{
-        //    Debug.LogError("Không tìm thấy script KeyPlayer trên selectedPlayerPreview.");
-        //    return;
-        //}
-
-        //string selectedKey = imageComponent.playerKey;
-        //Debug.Log("Đã chọn nhân vật với key: " + selectedKey);
-
-        //// Tìm prefab có key trùng khớp
-        //GameObject prefabToSpawn = null;
-        //foreach (GameObject prefab in playerPrefabs)
-        //{
-        //    KeyPlayer prefabImage = prefab.GetComponent<KeyPlayer>();
-        //    if (prefabImage != null && prefabImage.playerKey == selectedKey)
-        //    {
-        //        prefabToSpawn = prefab;
-        //        break;
-        //    }
-        //}
-
-        //if (prefabToSpawn == null)
-        //{
-        //    Debug.LogError("Không tìm thấy prefab nào trùng key: " + selectedKey);
-        //    return;
-        //}
-
-        //// Spawn nhân vật tại vị trí mong muốn
-        //Instantiate(prefabToSpawn, Vector3.zero, Quaternion.identity);
+    private void Update()
+    {
+        GameData.playTime += Time.deltaTime;
+        // Cập nhật TextMeshProUGUI với thời gian chơi
+        if (playTimeText != null)
+        {
+            playTimeText.text = "Play Time: " + GameData.playTime.ToString("F0");
+        }
+        else
+        {
+            Debug.LogWarning("PlayTimeText is not assigned in the inspector.");
+        }
+        //Debug.Log("Play time: " + GameStats.playTime);
     }
 }

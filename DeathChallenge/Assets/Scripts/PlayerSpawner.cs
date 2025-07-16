@@ -9,14 +9,14 @@ public class PlayerSpawner : MonoBehaviour
 
     void Start()
     {
-        int selectedIndex = 0;
-        if (GameData.instance != null)
+        int selectedIndex = GameData.selectedCharacterIndex;
+        if (GameData.selectedCharacterIndex != null)
         {
             Debug.Log("GameData instance đã được tìm thấy, sử dụng chỉ số đã lưu.");
-            Debug.Log(GameData.instance.selectedCharacterIndex);
+            Debug.Log(GameData.selectedCharacterIndex);
 
-            selectedIndex = GameData.instance.selectedCharacterIndex;
-            Debug.Log("check " +GameData.instance.selectedCharacterIndex);
+            selectedIndex = GameData.selectedCharacterIndex;
+            Debug.Log("check " +GameData.selectedCharacterIndex);
         }
         else
         {
@@ -27,6 +27,7 @@ public class PlayerSpawner : MonoBehaviour
         // Tạo ra nhân vật tương ứng với lựa chọn
         if (playerPrefabs.Length > selectedIndex)
         {
+            Debug.Log("Tạo nhân vật với chỉ số: " + selectedIndex);
             playerPrefabs[selectedIndex].SetActive(true); // Kích hoạt prefab đã chọn
             //Instantiate(playerPrefabs[selectedIndex], spawnPoint.position, Quaternion.identity);
         }
