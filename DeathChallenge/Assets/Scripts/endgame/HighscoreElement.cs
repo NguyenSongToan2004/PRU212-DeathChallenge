@@ -5,12 +5,12 @@ using System;
 public class HighscoreElement
 {
     public string playerName;
-    public int score;
+    public int duration; // in seconds
 
-    public HighscoreElement(string name, int score)
+    public HighscoreElement(string name, int duration)
     {
         playerName = name;
-        this.score = score;
+        this.duration = duration;
     }
 
 }
