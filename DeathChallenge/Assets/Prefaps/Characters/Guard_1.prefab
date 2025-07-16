@@ -109,14 +109,13 @@ GameObject:
   - component: {fileID: 2668246890604339825}
   - component: {fileID: 7126654107821857178}
   - component: {fileID: 2049482593686982874}
-  - component: {fileID: -1903345022701731177}
   m_Layer: 7
   m_Name: Guard_1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6063224947806085859
 Transform:
   m_ObjectHideFlags: 0
@@ -351,16 +350,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-1903345022701731177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3565009513371427164}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b1a889bcbfd35040bc17a374f197177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerKey: Guard_1
