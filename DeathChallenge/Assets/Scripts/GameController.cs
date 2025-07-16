@@ -12,6 +12,14 @@ public class GameController : MonoBehaviour
         {
             GameData.playTime = 0f;
         }
+
+        string i = "";
+        for (int j = 0; j < GameData.playedMaps.Count; j++)
+        {
+            i += GameData.playedMaps[j] + ", ";
+        }
+
+        Debug.Log("map da choi : " + i);
     }
 
     private void Update()

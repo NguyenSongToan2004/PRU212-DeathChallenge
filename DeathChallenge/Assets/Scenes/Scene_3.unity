@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702147410}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 148209a2ec147704fbe39b84ca506863, type: 3}
   m_Name: 
@@ -2501,7 +2501,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   winningPanel: {fileID: 93609325}
-  playerHealth: {fileID: 0}
+  playerHealth:
+  - {fileID: 0}
   delayBeforeNextScene: 2
   nextSceneName: Scene_4
   resetHealthValue: 1000
