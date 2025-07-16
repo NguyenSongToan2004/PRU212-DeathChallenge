@@ -32,6 +32,9 @@ public class Projectile : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Phát âm thanh khi đạn trúng người chơi
+            AudioManager.instance.Play("Bullet_Hit");
+
             Debug.Log("Player hit the player!");
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)

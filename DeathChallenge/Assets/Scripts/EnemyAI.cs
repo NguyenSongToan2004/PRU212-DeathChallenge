@@ -307,6 +307,9 @@ public class EnemyAI : MonoBehaviour
 
     public void TriggerAttack()
     {
+        // Phát âm thanh tấn công
+        AudioManager.instance.Play("Ghost_Hit");
+        
         // Tìm đối tượng người chơi trong phạm vi tấn công
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackRange);
 
@@ -346,6 +349,9 @@ public class EnemyAI : MonoBehaviour
         {
             return;
         }
+
+        // Phát âm thanh tấn công
+        AudioManager.instance.Play("Ghost_Hit");
 
         // Tạo ra viên đạn tại vị trí và góc quay của FirePoint
         GameObject projectileObj = Instantiate(bulletPrefab, bulletPoint.position, bulletPoint.rotation);
