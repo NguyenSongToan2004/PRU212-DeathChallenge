@@ -32,6 +32,30 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    void Start()
+    {
+        // Cập nhật sounds array nếu scene hiện tại có AudioManager khác
+        AudioManager currentSceneAudioManager = FindObjectOfType<AudioManager>();
+        if (currentSceneAudioManager != null && currentSceneAudioManager != this)
+        {
+            // Copy sounds từ AudioManager của scene hiện tại
+            sounds = currentSceneAudioManager.sounds;
+            
+            // Khởi tạo lại AudioSource cho sounds mới
+            foreach (Sound s in sounds)
+            {
+                s.source = gameObject.AddComponent<AudioSource>();
+                s.source.clip = s.clip;
+                s.source.volume = s.volume;
+                s.source.pitch = s.pitch;
+                s.source.loop = s.loop;
+            }
+            
+            // Hủy AudioManager của scene hiện tại
+            Destroy(currentSceneAudioManager.gameObject);
+        }
+    }
+
     public void Play(string sound)
     {
         Sound s = Array.Find(sounds, item => item.name == sound);
@@ -69,5 +93,31 @@ public class AudioManager : MonoBehaviour
         if (s == null) return;
 
         s.source.Stop();
+    }
+
+    public void ReloadSounds(Sound[] newSounds)
+    {
+        // Dừng tất cả âm thanh đang phát
+        foreach (Sound s in sounds)
+        {
+            if (s.source != null)
+            {
+                s.source.Stop();
+                Destroy(s.source);
+            }
+        }
+        
+        // Cập nhật sounds array
+        sounds = newSounds;
+        
+        // Khởi tạo lại AudioSource
+        foreach (Sound s in sounds)
+        {
+            s.source = gameObject.AddComponent<AudioSource>();
+            s.source.clip = s.clip;
+            s.source.volume = s.volume;
+            s.source.pitch = s.pitch;
+            s.source.loop = s.loop;
+        }
     }
 }
