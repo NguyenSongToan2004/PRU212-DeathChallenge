@@ -32,6 +32,8 @@ public class PlayerAttack : MonoBehaviour
     private void Attack()
     {
         lastAttackTime = Time.time; // Cập nhật thời gian tấn công cuối
+
+        AudioManager.instance.Play("PlayerAttack");
         animator.SetTrigger("isAttack");
     }
 
