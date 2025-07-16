@@ -1,6 +1,7 @@
-﻿using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using System;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinningController : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class WinningController : MonoBehaviour
 
     [Header("Player References")]
     // Thêm reference đến PlayerHealth
-    public PlayerHealth playerHealth;
+    public PlayerHealth[] playerHealth;
+
 
     [Header("Scene Transition Settings")]
     // Thời gian delay trước khi chuyển scene (để player có thể thấy winning panel)
@@ -23,6 +25,8 @@ public class WinningController : MonoBehaviour
     // Giá trị health sẽ được reset về
     public int resetHealthValue = 1000;
 
+    private PlayerHealth currentPlayerHealth;
+
     void Start()
     {
         // Ẩn panel đi khi game bắt đầu
@@ -31,13 +35,28 @@ public class WinningController : MonoBehaviour
             winningPanel.SetActive(false);
         }
 
-        // Tự động tìm PlayerHealth nếu chưa được gán
+        if (playerHealth == null || playerHealth.Length == 0)
+        {
+            Debug.LogError("playerHealth mảng chưa được gán hoặc rỗng.");
+            return;
+        }
+
+        int index = GameData.selectedCharacterIndex;
+
+        if (index < 0 || index >= playerHealth.Length)
+        {
+            Debug.LogError($"selectedCharacterIndex = {index} vượt quá giới hạn mảng playerHealth.");
+            return;
+        }
+
+        currentPlayerHealth = playerHealth[GameData.selectedCharacterIndex];
+
         if (playerHealth == null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
             if (playerObject != null)
             {
-                playerHealth = playerObject.GetComponent<PlayerHealth>();
+                playerHealth = playerObject.GetComponent<PlayerHealth[]>();
             }
         }
 
@@ -46,6 +65,7 @@ public class WinningController : MonoBehaviour
         {
             Debug.LogWarning("PlayerHealth not found! Please assign it in the Inspector.");
         }
+
     }
 
     // Hàm này sẽ tự động được gọi khi có một đối tượng khác đi vào trigger
@@ -75,6 +95,8 @@ public class WinningController : MonoBehaviour
             winningPanel.SetActive(true);
         }
 
+        GameData.AddPlayedMap(SceneManager.GetActiveScene().name);
+
         ResetPlayerHealth();
         StartCoroutine(LoadNextSceneAfterDelay());
     }
@@ -84,7 +106,7 @@ public class WinningController : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.ResetHealth(resetHealthValue);
+            currentPlayerHealth.ResetHealth(resetHealthValue);
             Debug.Log($"Player health reset to {resetHealthValue}");
         }
         else
@@ -96,6 +118,7 @@ public class WinningController : MonoBehaviour
     // Coroutine để chuyển scene sau một khoảng thời gian
     private IEnumerator LoadNextSceneAfterDelay()
     {
+
         Debug.Log($"Waiting {delayBeforeNextScene} seconds before loading next scene...");
         yield return new WaitForSeconds(delayBeforeNextScene);
 
@@ -124,9 +147,9 @@ public class WinningController : MonoBehaviour
         }
     }
 
-    // Hàm để chuyển scene ngay lập tức (có thể gọi từ button)
     public void LoadNextSceneImmediately()
     {
+
         ResetPlayerHealth();
 
         if (!string.IsNullOrEmpty(nextSceneName))
