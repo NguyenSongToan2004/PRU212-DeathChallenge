@@ -241,7 +241,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2, y: -110}
-  m_SizeDelta: {x: 429.4, y: 50}
+  m_SizeDelta: {x: 544.4, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319421303
 MonoBehaviour:
@@ -265,8 +265,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: DEAD CHALLENGE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -290,8 +290,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34.6
+  m_fontSizeBase: 34.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -448,8 +448,8 @@ MonoBehaviour:
   m_text: "Tr\u1EA7n Nguy\u1EC5n Vi\u1EC7t Quang\nL\xEA Ho\xE0ng Tr\u1ECDng\nNguy\u1EC5n
     Song To\xE0n\nV\u0169 Ho\xE0ng Hi\u1EBFu Ng\xE2n\nNguy\u1EC5n Duy Nam"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -648,7 +648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &841835446
 RectTransform:
   m_ObjectHideFlags: 0
@@ -947,8 +947,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "One step closer to the other side\u2026 - \u201CThe path to hell begins\u2026\u201D "
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1013,7 +1013,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1129326485
@@ -1081,10 +1081,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "SE183008            \r\nQE180185 \r\nSE183104\r\nSE183096\r\nSF183115"
+  m_text: "SE183008            \r\nQE180185 \r\nSE183104\r\nSE183096\r\nSE183115"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1411,8 +1411,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Game Credits '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1436,8 +1436,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 65.5
-  m_fontSizeBase: 65.5
+  m_fontSize: 70.2
+  m_fontSizeBase: 70.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

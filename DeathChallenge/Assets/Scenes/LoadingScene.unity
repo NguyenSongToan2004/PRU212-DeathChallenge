@@ -517,8 +517,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Tip
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -542,10 +542,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.3
-  m_fontSizeBase: 36
+  m_fontSize: 25.6
+  m_fontSizeBase: 25.6
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
@@ -653,8 +653,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Loading... 0%
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -770,8 +770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 140.99, y: -124.04}
-  m_SizeDelta: {x: 215.15, y: 200.49}
+  m_AnchoredPosition: {x: 140.99002, y: -141.9}
+  m_SizeDelta: {x: 215.15, y: 217.7}
   m_Pivot: {x: 0.5000001, y: 0.5}
 --- !u!114 &1470408265
 MonoBehaviour:
@@ -959,17 +959,16 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 
-    sed do
-    eiusmod tempor incididunt ut labore et dolore
+    sed do eiusmod
+    tempor incididunt ut labore et dolore
 
-    magna aliqua. Ut enim ad
-    minim veniam, quis nostrud
+    magna aliqua. Ut enim ad minim veniam,
+    quis nostrud
 
-    exercitation ullamco laboris nisi ut aliquip
-    ex ea'
+    exercitation ullamco laboris nisi ut aliquip ex ea'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
+  m_sharedMaterial: {fileID: -4679566847089529275, guid: 19e96c3c3d17f6647bb4811cb15c5306, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
