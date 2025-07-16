@@ -5,7 +5,9 @@ public class SceneBackgroundMusic : MonoBehaviour
     void Start()
     {
         // Tìm AudioManager của scene hiện tại để lấy sounds
-        AudioManager[] allAudioManagers = FindObjectsOfType<AudioManager>();
+        //AudioManager[] allAudioManagers = FindObjectsOfType<AudioManager>();
+        AudioManager[] allAudioManagers = FindObjectsByType<AudioManager>(FindObjectsSortMode.None);
+
         foreach (AudioManager am in allAudioManagers)
         {
             if (am != AudioManager.instance)

@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ground_Ghost_3 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8530864195525076613, guid: 7f2b948f2b47e8b42939b7d7f127da09, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 385ebcb32bbea7845b270f4decb6617a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

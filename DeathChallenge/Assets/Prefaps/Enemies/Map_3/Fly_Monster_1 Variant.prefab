@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2368188580426222933, guid: 44211ce4b289fd94b8d3f4d7d58ad8fe, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 20c4a7ed3bfa95c45b55044d1dc7b7b6, type: 2}
     - target: {fileID: 3802234523059770167, guid: 44211ce4b289fd94b8d3f4d7d58ad8fe, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 1.95
@@ -26,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6331933998518780359, guid: 44211ce4b289fd94b8d3f4d7d58ad8fe, type: 3}
       propertyPath: m_Name
-      value: Fly_Monster_Original Variant
+      value: Fly_Monster_1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6611504627133205163, guid: 44211ce4b289fd94b8d3f4d7d58ad8fe, type: 3}
       propertyPath: m_Size.x
