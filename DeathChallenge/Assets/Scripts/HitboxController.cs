@@ -8,6 +8,9 @@ public class HitboxController : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
+            // Phát âm thanh khi hit trúng enemy
+            AudioManager.instance.Play("PlayerHit");
+            
             Debug.Log("Hitbox touched the Player!");
             EnemyAI enemyHealth = other.GetComponent<EnemyAI>();
             PlayerAttack playerAttack = GetComponentInParent<PlayerAttack>();
