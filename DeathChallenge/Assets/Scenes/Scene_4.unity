@@ -373,15 +373,15 @@ MonoBehaviour:
   - name: PlayerHit
     clip: {fileID: 8300000, guid: e902a76dc885b134b830a30afa9d7b2e, type: 3}
     mixer: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Victory
     clip: {fileID: 8300000, guid: b593aa18d7042ca439317082be6e8322, type: 3}
     mixer: {fileID: 0}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &13228860
