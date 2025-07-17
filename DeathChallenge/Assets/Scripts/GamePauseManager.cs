@@ -6,6 +6,9 @@ public class GamePauseManager : MonoBehaviour
     public GameObject pausePanel;  // Gắn panel trong Inspector
     private bool isPaused = false;
 
+    private float lastToggleTime = 0f;
+    private float toggleCooldown = 0.3f; 
+
     public void TogglePause()
     {
         isPaused = !isPaused;
@@ -15,6 +18,7 @@ public class GamePauseManager : MonoBehaviour
         if (pausePanel != null)
         {
             pausePanel.SetActive(isPaused);
+            lastToggleTime = Time.unscaledTime;
         }
 
         Debug.Log("Game is now " + (isPaused ? "Paused" : "Running"));
@@ -22,7 +26,7 @@ public class GamePauseManager : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.escapeKey.isPressed)
+        if (Keyboard.current.escapeKey.isPressed && Time.unscaledTime - lastToggleTime > toggleCooldown)
         {
             TogglePause();
         }

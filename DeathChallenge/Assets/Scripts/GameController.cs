@@ -17,15 +17,17 @@ public class GameController : MonoBehaviour
     private void Update()
     {
         GameData.playTime += Time.deltaTime;
-        // Cập nhật TextMeshProUGUI với thời gian chơi
+
         if (playTimeText != null)
         {
-            playTimeText.text = "Play Time: " + GameData.playTime.ToString("F0");
+            int minutes = Mathf.FloorToInt(GameData.playTime / 60f);
+            int seconds = Mathf.FloorToInt(GameData.playTime % 60f);
+
+            playTimeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
         else
         {
             Debug.LogWarning("PlayTimeText is not assigned in the inspector.");
         }
-        //Debug.Log("Play time: " + GameStats.playTime);
     }
 }
