@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -287,6 +288,10 @@ public class PlayerHealth : MonoBehaviour
                 enemy.OnPlayerDied();
             }
         }
+
+
+        Loading.TargetSceneName = "EndGame";
+        SceneManager.LoadScene("LoadingScene");
     }
 
     void UpdateHealthText()

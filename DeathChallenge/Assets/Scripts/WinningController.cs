@@ -70,10 +70,10 @@ public class WinningController : MonoBehaviour
     {
         // Dừng nhạc nền hiện tại
         AudioManager.instance.StopBackground("Background_1");
-        
+
         // Phát âm thanh chiến thắng
         AudioManager.instance.Play("Victory");
-        
+
         // Hiển thị winning panel
         if (winningPanel != null)
         {
@@ -81,6 +81,7 @@ public class WinningController : MonoBehaviour
         }
 
         ResetPlayerHealth();
+        // Loading.SetTargetScene("EndGame");
         StartCoroutine(LoadNextSceneAfterDelay());
     }
 
