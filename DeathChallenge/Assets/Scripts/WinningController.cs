@@ -121,7 +121,8 @@ public class WinningController : MonoBehaviour
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
                 Debug.Log($"Loading next scene with index: {nextSceneIndex}");
-                SceneManager.LoadScene(nextSceneIndex);
+                Loading.TargetSceneName = SceneManager.GetSceneByBuildIndex(nextSceneIndex).name;
+                SceneManager.LoadScene("LoadingScene");
             }
             else
             {
