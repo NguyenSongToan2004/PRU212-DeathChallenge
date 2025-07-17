@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -7,11 +8,18 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        // Kiểm tra và khởi tạo GameStats nếu chưa có
         if (GameData.playTime == 0f)
         {
             GameData.playTime = 0f;
         }
+
+        GameData.AddVisitedMap(SceneManager.GetActiveScene().name);
+
+
+        //foreach (var map in GameData.GetVisitedMaps)
+        //{
+        //    Debug.Log("- " + map);
+        //}
     }
 
     private void Update()
