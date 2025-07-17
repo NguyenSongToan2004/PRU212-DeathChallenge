@@ -202,7 +202,6 @@ public class MenuController : MonoBehaviour
         {
 
             GameData.playTime = 10f;
-            GameData.selectedCharacterIndex = 2;
             // Logic chuyển scene của bạn đã đúng
             Loading.TargetSceneName = sceneName;
             SceneManager.LoadScene("LoadingScene");

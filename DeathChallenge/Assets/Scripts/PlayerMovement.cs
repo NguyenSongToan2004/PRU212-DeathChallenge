@@ -39,6 +39,11 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if(Keyboard.current.pKey.isPressed)
+        {
+            PlayerHealth.instance.safeTime = 1000f; // Tạm thời vô hiệu hóa an toàn
+        }
+
         if (Keyboard.current.spaceKey.isPressed && _dashTime <= 0 && !_isDashing)
         {
             moveSpeed += dashBoost;

@@ -10,7 +10,7 @@ public class WinningController : MonoBehaviour
 
     [Header("Player References")]
     // Thêm reference đến PlayerHealth
-    public PlayerHealth playerHealth;
+    public PlayerHealth[] playerHealth;
 
     [Header("Scene Transition Settings")]
     // Thời gian delay trước khi chuyển scene (để player có thể thấy winning panel)
@@ -22,6 +22,7 @@ public class WinningController : MonoBehaviour
     [Header("Health Reset Settings")]
     // Giá trị health sẽ được reset về
     public int resetHealthValue = 1000;
+    private PlayerHealth currentHeath;
 
     void Start()
     {
@@ -31,13 +32,17 @@ public class WinningController : MonoBehaviour
             winningPanel.SetActive(false);
         }
 
+        Debug.Log("selected  " + GameData.selectedCharacterIndex);
+
+        currentHeath = playerHealth.Length > 0 ? playerHealth[GameData.selectedCharacterIndex] : null;
+
         // Tự động tìm PlayerHealth nếu chưa được gán
         if (playerHealth == null)
         {
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
             if (playerObject != null)
             {
-                playerHealth = playerObject.GetComponent<PlayerHealth>();
+                currentHeath = playerObject.GetComponent<PlayerHealth>();
             }
         }
 
@@ -84,7 +89,7 @@ public class WinningController : MonoBehaviour
     {
         if (playerHealth != null)
         {
-            playerHealth.ResetHealth(resetHealthValue);
+            currentHeath.ResetHealth(resetHealthValue);
             Debug.Log($"Player health reset to {resetHealthValue}");
         }
         else
