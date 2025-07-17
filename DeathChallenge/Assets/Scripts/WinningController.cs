@@ -51,6 +51,7 @@ public class WinningController : MonoBehaviour
         {
             Debug.LogWarning("PlayerHealth not found! Please assign it in the Inspector.");
         }
+        GameData.isLose = false; // Reset trạng thái thua khi bắt đầu scene 
     }
 
     // Hàm này sẽ tự động được gọi khi có một đối tượng khác đi vào trigger

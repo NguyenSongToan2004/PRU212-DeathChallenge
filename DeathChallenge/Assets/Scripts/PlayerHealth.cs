@@ -289,7 +289,7 @@ public class PlayerHealth : MonoBehaviour
             }
         }
 
-
+        GameData.isLose = true; // Đặt trạng thái thua khi player chết
         Loading.TargetSceneName = "EndGame";
         SceneManager.LoadScene("LoadingScene");
     }

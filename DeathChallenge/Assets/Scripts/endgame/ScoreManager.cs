@@ -3,13 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     [Header("UI References")]
+    [SerializeField] private TextMeshProUGUI durationValue;
+    [SerializeField] private TextMeshProUGUI endGameTitle;
+    [SerializeField] private Image backgroundImage;
     [SerializeField] private TextMeshProUGUI durationText;
+
+    [Header("End Game Assets")]
+    [SerializeField] private Sprite winBackground;
+    [SerializeField] private Sprite loseBackground;
+    [SerializeField] private string winTitleText = "Your spirit has found its way to heaven.";
+    [SerializeField] private string loseTitleText = "Your soul is damned to hell...";
+
+    [Header("Game State")]
+    [Tooltip("Tick if the player successfully completed the level")]
+    [SerializeField] private bool isWin;
+
+    [Header("Highscore UI")]
     [SerializeField] private GameObject enterNamePanel;
-    [SerializeField] private GameObject panel;
     [SerializeField] private GameObject highscoreUIElementPrefab;
     [SerializeField] private RectTransform elementContainer;
     [SerializeField] private TMP_InputField nameInputField;
@@ -29,6 +44,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+
         // 1) Tính và hiển thị duration
         UpdateDuration();
 
@@ -40,11 +56,29 @@ public class ScoreManager : MonoBehaviour
             return;
         }
 
+        // Determine leaderboard eligibility
+        int idx = highscoreHandler.GetInsertIndex(durationInSeconds);
+        bool canEnterLeaderboard = idx >= 0 && idx < highscoreHandler.MaxCount;
+
+        // Update end game title and background based on actual win/lose
+        isWin = !GameData.isLose; 
+        endGameTitle.text = isWin ? winTitleText : loseTitleText;
+        if (backgroundImage != null)
+            backgroundImage.sprite = isWin ? winBackground : loseBackground;
+
+        if (!isWin)
+        {
+            endGameTitle.color = Color.white;
+            durationValue.color = Color.white;
+            durationText.color = Color.white;
+        }
+
+
         maps = GameData.GetVisitedMaps();
 
-        ShowPanel();
-        int idx = highscoreHandler.GetInsertIndex(durationInSeconds);
-        enterNamePanel.SetActive(idx >= 0 && idx < highscoreHandler.MaxCount);
+        //ShowPanel();
+        //int idx = highscoreHandler.GetInsertIndex(durationInSeconds);
+        //enterNamePanel.SetActive(idx >= 0 && idx < highscoreHandler.MaxCount);
 
         // 4) Đợi frame đầu rồi fill UI
         StartCoroutine(DelayedUpdateUI());
@@ -116,7 +150,4 @@ public class ScoreManager : MonoBehaviour
     {
         HighscoreHandler.OnHighscoreListChanged -= UpdateUI;
     }
-
-    public void ShowPanel() => panel.SetActive(true);
-    public void ClosePanel() => panel.SetActive(false);
 }
