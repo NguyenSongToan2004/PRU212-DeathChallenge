@@ -7,18 +7,20 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     [Header("UI References")]
-    [SerializeField] private TextMeshProUGUI durationValue;
+    [SerializeField] private TextMeshProUGUI durationText;
     [SerializeField] private GameObject enterNamePanel;
     [SerializeField] private GameObject panel;
     [SerializeField] private GameObject highscoreUIElementPrefab;
     [SerializeField] private RectTransform elementContainer;
     [SerializeField] private TMP_InputField nameInputField;
 
+    private float duration = 0;
+
     private HighscoreHandler highscoreHandler;
     private int durationInSeconds;
     private readonly List<GameObject> uiElements = new();
     // Tạm hard‑code danh sách map vừa chơi
-    private readonly List<string> maps = new() { "Map_1", "Map_2", "Map_3" };
+    private List<string> maps;
 
     private void Awake()
     {
@@ -38,7 +40,8 @@ public class ScoreManager : MonoBehaviour
             return;
         }
 
-        // 3) Show panel, kiểm tra index, bật panel nhập tên
+        maps = GameData.GetVisitedMaps();
+
         ShowPanel();
         int idx = highscoreHandler.GetInsertIndex(durationInSeconds);
         enterNamePanel.SetActive(idx >= 0 && idx < highscoreHandler.MaxCount);
@@ -49,13 +52,15 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateDuration()
     {
-        if (durationValue == null) return;
-        // Giả sử lấy giờ hiện tại trừ đi startAt cố định
-        string hhmmss = DateTime.Now.ToString("HH:mm:ss");
-        durationValue.text = hhmmss;
-        // Chuyển sang giây (chỉ ví dụ)
-        TimeSpan ts = TimeSpan.Parse(hhmmss);
-        durationInSeconds = (int)ts.TotalSeconds;
+        duration = GameData.playTime;
+
+        int minutes = Mathf.FloorToInt(duration / 60f);
+        int seconds = Mathf.FloorToInt(duration % 60f);
+
+        durationText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        // Lưu duration dạng giây
+        durationInSeconds = Mathf.FloorToInt(duration);
     }
 
     private IEnumerator DelayedUpdateUI()
@@ -76,12 +81,16 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateUI(List<HighscoreElement> list)
     {
+
+        if (list == null) return;
+
         // 1) Tạo hoặc tái sử dụng prefab để match số bản ghi
         for (int i = 0; i < list.Count; i++)
         {
             if (i >= uiElements.Count)
             {
                 var go = Instantiate(highscoreUIElementPrefab, elementContainer);
+                go.transform.localScale = Vector3.one; // <-- thêm dòng này
                 uiElements.Add(go);
             }
 
